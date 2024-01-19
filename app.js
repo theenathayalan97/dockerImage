@@ -13,7 +13,7 @@ app.get("/",function getData(req, res){
     }
 })
 
-app.listen(port,(err)=>{l
+app.listen(port,(err)=>{
     if(err){
         console.log(`port not connected in ${err}`)
     }
