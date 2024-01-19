@@ -1,4 +1,4 @@
-apiVersion: v1
+apiVersion: latest
 kind: Pod
 metadata:
   name: mywebapp1
@@ -7,7 +7,7 @@ metadata:
     app: nginx
 spec:
   containers:
-  - name: webserver1
+  - name: welcome_docker
     image: 482088842115.dkr.ecr.ap-south-1.amazonaws.com/welcome_cantainer:latest
     ports:
-     - containerPort:80
+    - containerPort: 80
