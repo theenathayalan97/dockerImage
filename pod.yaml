@@ -10,4 +10,4 @@ spec:
   - name: welcome_docker
     image: 482088842115.dkr.ecr.ap-south-1.amazonaws.com/welcome_cantainer:latest
     ports:
-    - containerPort: 80
+    - containerPort: 8000
