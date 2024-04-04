@@ -3,12 +3,13 @@
   hosts: server
   become: True
   tasks:
-    - name: install nginx
-      apt: name=nginx state=latest
-    - name: start nginx
-      service:
-          name: nginx
-          state: started
+    - name: build container image
+      docker_image:
+        name: democontainer:v1.0
+        build:
+          path: /root/demo-dockerfile
+          source: build
+        state: present
 
 
 
