@@ -6,7 +6,7 @@ app.use(express.json())
 
 app.get("/",function getData(req, res){
     try {
-        const user = "theena"
+        const user = "theena thayalan"
         return res.status(200).json({ message: `Welcome ${user} !!!`})
     } catch (error) {
         return res.status(400).json({ message: "something went wrong", result: error.message })
