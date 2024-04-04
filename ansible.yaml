@@ -1,6 +1,7 @@
 ---
 - name: Build image and with build args
   hosts: server
+  become: True
   tasks:
     - name: Build Docker image
       community.docker.docker_image:
