@@ -7,7 +7,7 @@
       docker_image:
         name: democontainer:v1.0
         build:
-          path: /root/demo-dockerfile
+          path: /dockerImage
           source: build
         state: present
 
