@@ -3,13 +3,12 @@
   hosts: server
   become: True
   tasks:
-    - name: Build Docker image
-      community.docker.docker_image:
-        name: myimage
-        build:
-          args:
-            listen_port: 8002
-        source: build
+    - name: install nginx
+      apt: name=nginx state=latest
+    - name: start nginx
+      service:
+          name: nginx
+          state: started
 
 
 
