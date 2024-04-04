@@ -1,11 +1,15 @@
+---
 - name: Build image and with build args
   hosts: server
-  community.docker.docker_image:
-    name: myimage
-    build:
-      args:
-        listen_port: 8002
-    source: build
+  tasks:
+    - name: Build Docker image
+      community.docker.docker_image:
+        name: myimage
+        build:
+          args:
+            listen_port: 8002
+        source: build
+
 
 
 
