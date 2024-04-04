@@ -1,10 +1,9 @@
 - name: Build image and with build args
+  hosts: server
   community.docker.docker_image:
     name: myimage
     build:
-      path: /
       args:
-        log_volume: /var/log/myapp
         listen_port: 8002
     source: build
 
