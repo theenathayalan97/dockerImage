@@ -1,2 +1,2 @@
 [server]
-65.0.31.213 ansible = datayaan_cloud
+65.0.31.213 ansible_user = datayaan_cloud
