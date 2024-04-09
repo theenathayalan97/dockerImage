@@ -1,0 +1,19 @@
+---
+- name: Update web servers
+  hosts: webservers
+  remote_user: root
+
+  tasks:
+    - name: install pip
+      apt:
+        name: python-pip
+      vars:
+        ansible_python_interpreter: /usr/bin/python
+    - name: Build image and with build args
+      community.docker.docker_image:
+        name: myimage
+        build:
+          path: /path/to/build/dir
+          args:
+            listen_port: 8080
+        source: build
