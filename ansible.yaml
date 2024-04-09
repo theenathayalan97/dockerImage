@@ -1,12 +1,12 @@
 ---
 - name: Build image and with build args
   hosts: server
-  become: True
+  become: true
   vars:
     ansible_python_interpreter: /usr/bin/python3  # Set Python 3 interpreter
 
   tasks:
-    - name: install pip
+    - name: Install pip
       apt:
         name: python3-pip  # Install pip for Python 3
         state: present
@@ -17,8 +17,8 @@
         executable: pip3
         state: present
 
-    - name: build container image
-      docker_image:
-        name: democontainer:v1.0
-        # path: /Dockerfile  # Path to the directory containing Dockerfile and build context
-        state: present
+    - name: Build Python 3.12 image
+      community.docker.docker_image_build:
+        name: ansible:latest
+        path: /opt/etc/docker
+        dockerfile: Dockerfile-3.12
