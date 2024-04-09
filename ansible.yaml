@@ -17,7 +17,7 @@
         executable: pip3
         state: present
 
-    - name: Build Python 3.12 image
+    - name: Build node image
       community.docker.docker_image_build:
         name: ansible:latest
         path: /opt/etc/docker
