@@ -11,6 +11,12 @@
         name: python3-pip  # Install pip for Python 3
         state: present
 
+    - name: Install Docker Python library
+      pip:
+        name: docker
+        executable: pip3
+        state: present
+
     - name: build container image
       docker_image:
         name: democontainer:v1.0
