@@ -22,4 +22,5 @@
         name: democontainer:v1.0
         build:
           path: /dockerImage
+          source: build  # Explicitly specify the source option
         state: present
