@@ -18,7 +18,7 @@
         state: present
 
     - name: build container image
-      community.docker.docker_image_build:
+      docker_image:
         name: democontainer:v1 .
         path: /dockerimage  # Path to the directory containing Dockerfile and build context
         dockerfile: Dockerfile
