@@ -19,7 +19,7 @@
     - name: Build osquery image
       docker_image: 
         command: docker build -t built-by-ansible:ex2 .
-        path: /Dockerfile
+        path: //Dockerfile
         # name: imagename
         # tag: v1
 
