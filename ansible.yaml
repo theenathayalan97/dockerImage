@@ -16,10 +16,11 @@
         name: docker
         executable: pip3
         state: present
-    - name: docker build -t
+    - name: docker build 
       docker_image: 
         command: built-by-ansible:ex2 .
         path: /Dockerfile
+        state: present
         # name: imagename
         # tag: v1
 
