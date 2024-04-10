@@ -17,12 +17,12 @@
         executable: pip3
         state: present
 
-    - name: build container image
-      docker_image:
-        name: democontainer:v1 .
-        path: /dockerimage  # Path to the directory containing Dockerfile and build context
-        dockerfile: Dockerfile
-        state: present
+    - name: build the image
+      docker_image: >
+        name=built-by-ansible
+        tag=ex1
+        path=/tmp/site
+        state=present
 
     # - name: build container image
     #   community.docker.docker_image_build:
