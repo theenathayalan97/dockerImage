@@ -16,11 +16,11 @@
         name: docker
         executable: pip3
         state: present
-    - name: Build osquery image
-      docker_image:
-        path: /tmp/path/
-        name: imagename
-        tag: v1
+    # - name: Build osquery image
+    #   docker_image:
+    #     path: /tmp/path/
+    #     name: imagename
+    #     tag: v1
 
     # - name: build the image
     #   docker_image: >
