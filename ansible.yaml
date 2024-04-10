@@ -19,10 +19,11 @@
 
     - name: build the image
       docker_image: >
-        name=built-by-ansible
-        tag=ex1
-        path=/tmp/site
-        state=present
+        command: docker build -t built-by-ansible:ex2 /tmp/site
+        # name=built-by-ansible
+        # tag=ex1
+        # path=/tmp/site
+        # state=present
 
     # - name: build container image
     #   community.docker.docker_image_build:
