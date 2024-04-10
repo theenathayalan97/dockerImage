@@ -18,9 +18,10 @@
         state: present
     - name: Build osquery image
       docker_image:
-        path: /tmp/path/
-        name: imagename
-        tag: v1
+        command: docker build -t built-by-ansible:ex2 /tmp/site
+        # path: /tmp/path/
+        # name: imagename
+        # tag: v1
 
     # - name: build the image
     #   docker_image: >
