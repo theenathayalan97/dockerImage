@@ -16,10 +16,10 @@
         name: docker
         executable: pip3
         state: present
-    - name: Build osquery image
+    - name: docker build -t
       docker_image: 
-        command: docker build -t built-by-ansible:ex2 .
-        path: //Dockerfile
+        command: built-by-ansible:ex2 .
+        path: /Dockerfile
         # name: imagename
         # tag: v1
 
