@@ -19,7 +19,7 @@
     - name: docker build 
       docker_image: 
         command: built-by-ansible:ex2 .
-        path: /dockerImage
+        path: /dockerImage/Dockerfile
         state: present
         # name: imagename
         # tag: v1
