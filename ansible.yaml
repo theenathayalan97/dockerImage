@@ -17,7 +17,7 @@
         executable: pip3
         state: present
         
-    - name: Run `docker-compose up -d`
+    - name: docker-compose up -d
       docker_compose:
         # name: built-by-ansible:ex2
         project_src: flask
