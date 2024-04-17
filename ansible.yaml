@@ -20,7 +20,7 @@
     - name: Run `docker-compose up`
       docker_compose:
         # name: built-by-ansible:ex2
-        project_src: flask
+        project_src: /opt/dockerImage
         # path: /opt/dockerImage  # Specify the correct path to the directory containing Dockerfile
         state: present
         # name: imagename
