@@ -20,7 +20,8 @@
     - name: Run `docker-compose up` again
       docker_compose:
         project_src: /opt/dockerImage
-        state: present
+        files:
+        - docker-compose.yml
 
         
         # name: imagename
