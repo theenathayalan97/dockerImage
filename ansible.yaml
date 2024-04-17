@@ -17,7 +17,7 @@
         executable: pip3
         state: present
         
-    - name: Run `docker-compose up`
+    - name: Run `docker-compose up` again
       docker_compose:
         project_src: /opt/dockerImage
         state: present
