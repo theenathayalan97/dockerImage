@@ -16,28 +16,28 @@
         name: docker
         executable: pip3
         state: present
-        
+
+    
+    - apt_repository:
+        repo: 'ppa:certbot/certbot'
+
+    - apt:
+        name: "{{ item }}"
+        update_cache: yes
+      with_items:
+        - nginx
+        - python-certbox-nginx
+            
     - name: Docker-compose up
       docker_compose:
         project_src: /opt/dockerImage
         files:
         - docker-compose.yml
 
-        
-        # name: imagename
-        # tag: v1
-        # path: /opt/dockerImage  # Specify the correct path to the directory containing Dockerfile
-
-    # - name: build the image
-    #   docker_image: >
-    #     command: docker build -t built-by-ansible:ex2 /tmp/site
-        # name=built-by-ansible
-        # tag=ex1
-        # path=/tmp/site
-        # state=present
-
-    # - name: build container image
-    #   community.docker.docker_image_build:
-    #     name: ansible:latest
-    #     path: /dockerimage
-    #     dockerfile: Dockerfile
+    - name: Log into ECR registry
+      docker_login:
+        registry_url: "aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 411571901235.dkr.ecr.ap-south-1.amazonaws.com"
+        debug: yes
+        username: "codecommit+1-at-411571901235"
+        password: "buBjN7JaHkWmoYprzhhLAwWJQCc7kMQ55FvxpuNJG+A="
+        reauthorize: yes
