@@ -18,8 +18,11 @@
         state: present
 
     
-    - apt_repository:
-        repo: 'ppa:certbot/certbot'
+    - name: Add Certbot repository
+          apt_repository:
+            repo: 'ppa:certbot/certbot'
+            state: present  # Use 'absent' to remove the repository
+          become: yes
 
     - apt:
         name: "{{ item }}"
