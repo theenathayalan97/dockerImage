@@ -23,14 +23,12 @@
           - certbot
           - certbot-nginx
         state: absent
-        executable: pip3
 
     - name: Install Certbot and certbot-nginx
       pip:
         name:
           - certbot
           - certbot-nginx
-        executable: pip3
 
 
     # - name: Debug message
