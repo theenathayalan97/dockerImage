@@ -17,15 +17,20 @@
         executable: pip3
         state: present
 
-    - name: Install certbot
+    - name: Uninstall Certbot and certbot-nginx
+      pip:
+        name:
+          - certbot
+          - certbot-nginx
+        state: absent
+        executable: pip3
+
+    - name: Install Certbot and certbot-nginx
       pip:
         name:
           - certbot
           - certbot-nginx
         executable: pip3
-      tags:
-        - nginx
-        - certbot
 
 
     # - name: Debug message
