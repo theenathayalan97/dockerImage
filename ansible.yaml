@@ -17,6 +17,17 @@
         executable: pip3
         state: present
 
+    - name: Install certbot
+      pip:
+        name:
+          - certbot
+          - certbot-nginx
+        executable: pip3
+      tags:
+        - nginx
+        - certbot
+
+
     # - name: Debug message
     #   debug:
     #     msg: "Removing Certbot repository"
@@ -39,7 +50,7 @@
         files:
         - docker-compose.yml
 
-    - name: Log into ECR registry
-      docker_login:
-        registry_url: "aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 411571901235.dkr.ecr.ap-south-1.amazonaws.com"
-        debug: yes
+    # - name: Log into ECR registry
+    #   docker_login:
+    #     registry_url: "aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 411571901235.dkr.ecr.ap-south-1.amazonaws.com"
+    #     debug: yes
