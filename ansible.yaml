@@ -17,21 +17,21 @@
         executable: pip3
         state: present
 
-    - name: Debug message
-      debug:
-        msg: "Removing Certbot repository"
-    - name: Add Certbot repository
-      apt_repository:
-        repo: 'ppa:certbot/certbot'
-        state: present  # Use 'absent' to remove the repository
-      become: yes
+    # - name: Debug message
+    #   debug:
+    #     msg: "Removing Certbot repository"
+    # - name: Add Certbot repository
+    #   apt_repository:
+    #     repo: 'ppa:certbot/certbot'
+    #     state: present  # Use 'absent' to remove the repository
+    #   become: yes
 
-    - apt:
-        name: "{{ item }}"
-        update_cache: yes
-      with_items:
-        - nginx
-        - python-certbox-nginx
+    # - apt:
+    #     name: "{{ item }}"
+    #     update_cache: yes
+    #   with_items:
+    #     - nginx
+    #     - python-certbox-nginx
             
     - name: Docker-compose up
       docker_compose:
