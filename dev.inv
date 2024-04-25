@@ -1,2 +1,4 @@
 [server]
 65.2.143.27 ansible_user=ubuntu
+3.110.85.86 ansible_user=ubuntu
+13.234.238.37 ansible_user=ubuntu
