@@ -8,7 +8,7 @@
   tasks:
     - name: install pip
       apt:
-        name: python3-pip  # Install pip for Python 3
+        name: python3-pip  
         state: present
 
     - name: Install Docker Python library
@@ -29,23 +29,6 @@
         name:
           - certbot
           - certbot-nginx
-
-
-    # - name: Debug message
-    #   debug:
-    #     msg: "Removing Certbot repository"
-    # - name: Add Certbot repository
-    #   apt_repository:
-    #     repo: 'ppa:certbot/certbot'
-    #     state: present  # Use 'absent' to remove the repository
-    #   become: yes
-
-    # - apt:
-    #     name: "{{ item }}"
-    #     update_cache: yes
-    #   with_items:
-    #     - nginx
-    #     - python-certbox-nginx
             
     - name: Docker-compose up
       docker_compose:
@@ -53,7 +36,3 @@
         files:
         - docker-compose.yml
 
-    # - name: Log into ECR registry
-    #   docker_login:
-    #     registry_url: "aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 411571901235.dkr.ecr.ap-south-1.amazonaws.com"
-    #     debug: yes
