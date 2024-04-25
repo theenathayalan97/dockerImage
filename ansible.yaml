@@ -17,7 +17,9 @@
         executable: pip3
         state: present
 
-    
+    - name: Debug message
+      debug:
+        msg: "Removing Certbot repository"
     - name: Add Certbot repository
       apt_repository:
         repo: 'ppa:certbot/certbot'
