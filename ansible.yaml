@@ -43,6 +43,3 @@
       docker_login:
         registry_url: "aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 411571901235.dkr.ecr.ap-south-1.amazonaws.com"
         debug: yes
-        username: "codecommit+1-at-411571901235"
-        password: "buBjN7JaHkWmoYprzhhLAwWJQCc7kMQ55FvxpuNJG+A="
-        reauthorize: yes
